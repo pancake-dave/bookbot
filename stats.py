@@ -1,6 +1,6 @@
 def count_words(text):
     words_list = text.split()
-    return f"{len(words_list)} words found in the document"
+    return len(words_list)
 
 def count_characters(text):
     char_dict = {}
@@ -11,3 +11,14 @@ def count_characters(text):
         else:
             char_dict[char] += 1
     return char_dict
+
+def character_count_lists(dict):
+    def sort_on(items):
+        return items["num"]
+
+    car_dicts_list = []
+    for char, number in dict.items():
+        car_dicts_list.append({"char": char, "num": number})
+    car_dicts_list.sort(reverse=True, key=sort_on)
+
+    return car_dicts_list
